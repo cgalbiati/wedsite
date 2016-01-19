@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px|Poiret+One|Lobster|Pinyon+Script|Great+Vibes|Italianno|Arizonia|Bilbo+Swash+Caps|Aladin|Monsieur+La+Doulaise|Miss+Fajardose|Amita:400,700);
+* {
+  box-sizing: border-box; }
+
+body {
+  background: url(/images/grunge2.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+  min-height: 100vh;
+  width: 100vw; }
+  body * {
+    font-family: "Poiret One", serif; }
+  body h3, body h2, body h1 {
+    font-family: "Arizonia", cursive; }
+  body h1 {
+    font-size: 46pt; }
+
+#main {
+  width: 100vw;
+  margin: 0 auto;
+  min-height: 100%; }
+
+.state-container {
+  padding: 60px 5% 0 5%; }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%); }
+
+our-logo {
+  display: block; }
+  our-logo img {
+    display: block;
+    width: 100%; }
+
+navbar {
+  display: block;
+  background: #833316;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 14px -3px black; }
+  navbar * {
+    font-family: "Arizonia", cursive; }
+  navbar .container {
+    width: 91%;
+    max-width: 1340px;
+    padding-top: 20px; }
+  navbar our-logo {
+    margin-top: 5px;
+    margin-right: 20px;
+    width: 40px; }
+  navbar a {
+    color: black;
+    font-size: 24px; }
+  navbar .nav > li > a {
+    cursor: pointer;
+    transition: color 0.2s; }
+    navbar .nav > li > a.active {
+      color: black; }
+    navbar .nav > li > a:hover {
+      background: none;
+      color: #f31214; }
+    navbar .nav > li > a:focus {
+      background: none; }
+  navbar .login-button {
+    float: right;
+    border: 1px solid black;
+    margin-top: 10px;
+    background: none;
+    outline: none !important; }
+  navbar .welcome {
+    float: right;
+    margin-top: 12px; }
+    navbar .welcome span {
+      color: white; }
+    navbar .welcome a {
+      color: #f30046;
+      cursor: pointer; }
+
+#home {
+  height: 100%; }
+  #home h1 {
+    margin-top: 40px;
+    text-align: center; }
+  #home #splash-pic {
+    max-height: 50vh;
+    max-width: 50vw;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%, -35%); }
+
+.bw-pic {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
+.heading {
+  position: absolute;
+  z-index: 2;
+  width: 100%; }
+
+#login-form {
+  width: 60%;
+  margin: 0 auto; }
+
+#our-story h1 {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 60pt; }
+
+#our-story p {
+  font-size: 1.3em; }
+
+#our-story #timeline {
+  position: absolute;
+  background: url(images/swirl-5-transp.png);
+  background-repeat: repeat-y;
+  top: 0%;
+  left: 50%;
+  width: 300px;
+  transform: translateZ(-3px) translateY(50%) scale(3);
+  height: 5000px;
+  z-index: 20; }
+
+#our-story .date {
+  position: absolute;
+  left: 50%;
+  transform: translateZ(0px);
+  border-radius: 5px;
+  background: rgba(240, 230, 220, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  width: 100px;
+  z-index: 40;
+  text-align: center; }
+
+#our-story .event {
+  width: 30%;
+  padding: 3%;
+  border-radius: 5px;
+  background: rgba(240, 230, 220, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 100pt; }
+
+#our-story .event:nth-child(2n+1) {
+  margin-left: 5%;
+  margin-right: auto; }
+
+#our-story .event:nth-child(2n) {
+  margin-left: auto;
+  margin-right: 5%; }
+
+#our-story .timeline-pic {
+  position: absolute;
+  width: 320px;
+  height: 240px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  background-size: cover; }
+
+#our-story .left {
+  left: 35%; }
+
+#our-story .right {
+  left: 205%; }
+
+#our-story #cat {
+  background-image: url(/images/cartoon-cat.jpg);
+  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(30%) rotate(2deg); }
+
+#our-story #ski {
+  background-image: url(/images/ski.jpg);
+  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(100%) rotate(2deg); }
+
+#our-story #morocco {
+  background-image: url(/images/morocco-doorway.jpg);
+  transform: translateZ(-1px) translateX(-94%) translateY(120%) rotate(2deg);
+  height: 500px; }
+
+#our-story #aruba {
+  background-image: url(/images/cartoon-cat.jpg);
+  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(-100%) rotate(2deg); }
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px; }
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.parallax__layer--base {
+  transform: translateZ(0px); }
+
+.parallax__layer--front {
+  transform: translateZ(3px);
+  z-index: 2; }
+
+.parallax-background {
+  transform: translateZ(-4px) scale(5);
+  z-index: -2; }
