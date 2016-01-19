@@ -17,7 +17,7 @@ var app = express();
 app.use(logger('dev'));
 app.use(session({
     // this mandatory configuration ensures that session IDs are not predictable
-    secret: 'hello world'
+    secret: 'galbathomas'
 }));
 app.use(cookieParser());
 // Parse our POST and PUT bodies.
@@ -30,13 +30,14 @@ app.use(function (req, res, next) {
 });
 
 //make static routes for files in public and node_modules
-app.use(express.static(path.join(__dirname, '../app/public')));  
+app.use(express.static(path.join(__dirname, '../browser/public')));  
+app.use(express.static(path.join(__dirname, '../browser/build')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
-app.use(express.static(path.join(__dirname, '../app/images')));  
+
 
 
 //static route to index
-var pathToIndex = path.join(__dirname, '../app', 'views', 'index.html');
+var pathToIndex = path.join(__dirname, '../browser', 'public', 'views', 'index.html');
 app.get('/', function(req, res, next){
   res.sendFile(pathToIndex);
 });
@@ -44,7 +45,7 @@ app.get('/', function(req, res, next){
 //make static routes for other page routes
 ['/details', '/rsvp', '/story', '/gifts', '/visiting'].forEach(function (route) {
   app.get(route, function (req, res, next) {
-  	var pathToRoute = path.join(__dirname, '../app', 'views', route +'.html');
+  	var pathToRoute = path.join(__dirname, '../browser', 'public', 'views', route +'.html');
     res.sendFile(pathToRoute);
   });
 });
