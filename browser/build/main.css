@@ -12,11 +12,15 @@ body {
   min-height: 100vh;
   width: 100vw; }
   body * {
-    font-family: "Poiret One", serif; }
+    font-family: "Poiret One", cursive; }
   body h3, body h2, body h1 {
     font-family: "Arizonia", cursive; }
   body h1 {
-    font-size: 46pt; }
+    font-size: 46pt;
+    margin-top: 0px;
+    text-align: center; }
+  body .navbar * {
+    font-family: "Great Vibes", cursive; }
 
 #main {
   width: 100vw;
@@ -24,7 +28,15 @@ body {
   min-height: 100%; }
 
 .state-container {
-  padding: 60px 5% 0 5%; }
+  padding: 30px 5% 60px 5%;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  height: 100%;
+  width: 100vw; }
 
 .centered {
   position: absolute;
@@ -33,60 +45,19 @@ body {
   /* bring your own prefixes */
   transform: translate(-50%, -50%); }
 
-our-logo {
-  display: block; }
-  our-logo img {
-    display: block;
-    width: 100%; }
+.text-center {
+  text-align: center; }
 
-navbar {
-  display: block;
-  background: #833316;
-  border-bottom: 1px solid black;
-  box-shadow: 1px 1px 14px -3px black; }
-  navbar * {
-    font-family: "Arizonia", cursive; }
-  navbar .container {
-    width: 91%;
-    max-width: 1340px;
-    padding-top: 20px; }
-  navbar our-logo {
-    margin-top: 5px;
-    margin-right: 20px;
-    width: 40px; }
-  navbar a {
-    color: black;
-    font-size: 24px; }
-  navbar .nav > li > a {
-    cursor: pointer;
-    transition: color 0.2s; }
-    navbar .nav > li > a.active {
-      color: black; }
-    navbar .nav > li > a:hover {
-      background: none;
-      color: #f31214; }
-    navbar .nav > li > a:focus {
-      background: none; }
-  navbar .login-button {
-    float: right;
-    border: 1px solid black;
-    margin-top: 10px;
-    background: none;
-    outline: none !important; }
-  navbar .welcome {
-    float: right;
-    margin-top: 12px; }
-    navbar .welcome span {
-      color: white; }
-    navbar .welcome a {
-      color: #f30046;
-      cursor: pointer; }
+.sub-heading {
+  font-size: 3em;
+  text-decoration: underline; }
+
+a {
+  text-decoration: none;
+  color: black; }
 
 #home {
   height: 100%; }
-  #home h1 {
-    margin-top: 40px;
-    text-align: center; }
   #home #splash-pic {
     max-height: 50vh;
     max-width: 50vw;
@@ -101,15 +72,13 @@ navbar {
 .heading {
   position: absolute;
   z-index: 2;
-  width: 100%; }
-
-#login-form {
-  width: 60%;
-  margin: 0 auto; }
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%); }
 
 #our-story h1 {
   margin-top: 40px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 60pt; }
 
 #our-story p {
@@ -208,3 +177,73 @@ navbar {
 .parallax-background {
   transform: translateZ(-4px) scale(5);
   z-index: -2; }
+
+#google_map {
+  height: 1200px;
+  width: 1600px; }
+
+.gm-style-iw * {
+  display: block;
+  width: 100%; }
+
+.gm-style .gm-style-iw {
+  max-width: 230px !important; }
+
+.gm-style-iw h4, .gm-style-iw p {
+  margin: 0;
+  padding: 0; }
+
+.gm-style-iw a {
+  color: #4272db; }
+
+.sub-container {
+  margin: 20pt; }
+  .sub-container h2:first-of-type {
+    margin-top: 0; }
+
+.sub-container > img {
+  max-width: 100%;
+  height: auto;
+  border: solid;
+  box-shadow: 10pt 10pt 7pt grey; }
+
+.sub-container > #embed-map-canvas {
+  max-width: 100%;
+  height: auto;
+  border: solid;
+  box-shadow: 10pt 10pt 7pt grey; }
+
+#visit .thumb-img > img {
+  max-width: 100%;
+  height: auto;
+  border: solid;
+  box-shadow: 10pt 10pt 7pt grey;
+  border-radius: 50%; }
+
+#visit .thumb-info {
+  padding: 10pt 5% 10pt 5%; }
+
+.navbar {
+  display: block; }
+  .navbar .container {
+    width: 91%;
+    max-width: 1340px;
+    padding-top: 20px; }
+  .navbar our-logo {
+    margin-top: 5px;
+    margin-right: 20px;
+    width: 40px; }
+  .navbar a {
+    color: black;
+    font-size: 24px; }
+  .navbar .nav > li > a {
+    cursor: pointer;
+    transition: color 0.2s; }
+    .navbar .nav > li > a.active {
+      color: #66001a; }
+    .navbar .nav > li > a:hover {
+      background: none;
+      text-shadow: 2px 2px 3px grey; }
+    .navbar .nav > li > a:focus {
+      background: none;
+      color: #66001a; }

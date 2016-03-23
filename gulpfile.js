@@ -25,21 +25,21 @@ gulp.task('reload', function () {
 // Development tasks
 
 gulp.task('buildCSS', function(){
-  return gulp.src('app/scss/*.scss')
+  return gulp.src('browser/scss/*.scss')
     .pipe(sass({
             errLogToConsole: true
         })) 
-    .pipe(gulp.dest('app/public'))
+    .pipe(gulp.dest('browser/build'))
 });
 
 gulp.task('buildJS', function () {
-    return gulp.src(['./server/js/app.js', './app/js/**/*.js'])
+    return gulp.src(['./browser/components/app.js', './browser/components/**/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(babel())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./browser/build'));
 });
 
 
@@ -54,19 +54,19 @@ gulp.task('buildJS', function () {
 // --------------------------------------------------------------
 
 gulp.task('buildCSSProduction', function () {
-    return gulp.src('app/scss/*.scss')
+    return gulp.src('browser/scss/*.scss')
         .pipe(sass())
         .pipe(minifyCSS())
-        .pipe(gulp.dest('./public'))
+        .pipe(gulp.dest('browser/build'))
 });
 
 gulp.task('buildJSProduction', function () {
-    return gulp.src(['./browser/js/app.js', './browser/js/**/*.js'])
+    return gulp.src(['./browser/components/app.js', './browser/components/**/*.js'])
         .pipe(concat('main.js'))
         .pipe(babel())
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./browser/build'));
 });
 
 gulp.task('buildProduction', ['buildCSSProduction', 'buildJSProduction']);
@@ -87,11 +87,11 @@ gulp.task('build', function () {
 gulp.task('default', function () {
   livereload.listen();
   gulp.start('build');
-
+ 
   gulp.watch('server/**/*.js', ['reload']);
-  gulp.watch('app/scss/**/*.scss', ['buildCSS', 'reload']); 
-  gulp.watch('app/js/**/*.js', ['buildJS', 'reload']); 
-  gulp.watch('app/**/*.html', ['reload']); 
+  gulp.watch('browser/scss/**/*.scss', ['buildCSS', 'reload']); 
+  gulp.watch('browser/components/**/*.js', ['buildJS', 'reload']); 
+  gulp.watch('browser/**/*.html', ['reload']); 
 
 
     // gulp.watch('app/js/**/*.js', function () {

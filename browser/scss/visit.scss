@@ -1,0 +1,14 @@
+#visit{
+  .thumb-img > img { 
+    max-width: 100%; 
+    height: auto; 
+    border: solid;
+    box-shadow: 10pt 10pt 7pt grey;
+    border-radius: 50%;
+  }
+
+  .thumb-info{
+    padding: 10pt 5% 10pt 5%;
+  }
+  
+}

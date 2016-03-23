@@ -9,30 +9,56 @@
 </head>
 <body>
 
-<section id="home" class='state-container'>
-    <div>
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/story">Our Story</a></li>
+            <li><a  class='active' href="/details">Details</a></li>
+            <li><a href="/visiting">Visiting the Area</a></li>
+            <li><a href="/gifts">Gifts</a></li>
+            <li><a href="/rsvp">RSVP</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="details" class='state-container'>
+    <div class='container'>
       <h1>
         All the Details
       </h1>  
     </div>
-    <div>
-        <h3>When: September 17th, 2016</h3>
-        <h3>Where: Women's Club of Englewood Carriage House, Englewood NJ</h3>
+    <div class='container'>
+        <h2 class='text-center sub-heading'>Ceremony and Reception</h2>
+        <div class='col-sm-6 sub-container'>
+            <h2>When: September 17th, 2016</h2>
+            <h2>Where: Women's Club of Englewood Carriage House, Englewood NJ</h2>
+            <h4>In order to escape NYC real estate madness, we decided to head across the George Washington Bridge to the historic town of Englewood. The Ceremony and reception will both take place at the historic carriagehouse built for the first mayor of Englewood.</h4>
+        </div>  
+        <div class='col-sm-4 sub-container'>
+            <img src="/images/carriage-house.jpg">
+        </div>
+        
     </div>
     
-   <div>
-        <img src="/images/carriage-house.jpg">
+    <div class='container'>
+        <h2 class='text-center sub-heading'>Getting There</h2>
+        <div class='col-sm-4 sub-container'
+        style="height:300px;max-width:100%;list-style:none; transition: none;overflow:hidden;">
+            <div id="embed-map-canvas" style="height:90%; width:95%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=womens+club+of+englewood+carriage+house&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-maps-code" href="https://www.dog-checks.com/german-shepherd-checks" id="get-data-for-embed-map">german shepherd checks</a><style>#embed-map-canvas .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.dog-checks.com/google-maps-authorization.js?id=fd5bc872-abab-71a7-3da9-9ba8dde76a56&c=google-maps-code&u=1458584952" defer="defer" async="async"></script>
+        
+        <div class='sub-container col-sm-6'>
+            <h2>Flying</h2>
+            <h4>All the NYC airports are well-connected to public transportation.  If you are staying in NJ, we recommend flying into Newark . It is about a 30 min drive, and doesn't require you to drive across Manhattan</h4>
+            <h2>From NYC</h2>
+            <h4>There are busses from Port Authority (NJ Transit bus 166) and the GW Bridge Bus Terminal (NJ Transit bus 186), which is as expected, near the entrance to the GW Bridge on 178th and Forth Washington</h4>
+        </div>
     </div>
     <div>
-        <h2>Directions</h2>
+        <h2 class='text-center sub-heading'>Schedule</h2>
+        <h4 class='text-center'>Coming soon...</h4>
     </div>
-    <div>
-        <h2>Hotels</h2>
-    </div>
-    <div>
-        <h2>Things to do nearby</h2>
-    </div>
-
 
 </section>
 </body>

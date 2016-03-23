@@ -1,0 +1,43 @@
+
+#google_map {
+        height:1200px;
+        width:1600px;
+    }
+    .gm-style-iw * {
+        display: block;
+        width: 100%;
+    }
+    .gm-style .gm-style-iw {
+      max-width: 230px !important;
+    }
+    .gm-style-iw h4, .gm-style-iw p {
+        margin: 0;
+        padding: 0;
+    }
+    .gm-style-iw a {
+        color: #4272db;
+    }
+
+.sub-container{
+  // padding: 4%;
+  h2:first-of-type{
+    margin-top: 0;
+  }
+
+  margin: 20pt;
+  // background-color: grey;
+}
+.sub-container > img { 
+  max-width: 100%; 
+  height: auto; 
+  border: solid;
+  box-shadow: 10pt 10pt 7pt grey;
+  // border-radius: 50%;
+}
+.sub-container > #embed-map-canvas { 
+  max-width: 100%; 
+  height: auto; 
+  border: solid;
+  box-shadow: 10pt 10pt 7pt grey;
+  // border-radius: 50%;
+}

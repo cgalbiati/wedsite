@@ -1,0 +1,65 @@
+.navbar {
+
+  display: block;
+  // background: $burnt-orange;
+  // #c06024;
+  // #cf7317;
+  //#cc6600;
+  // border-bottom: 1px solid black;
+  // box-shadow: 1px 1px 14px -3px black;
+
+  .container {
+    width: 91%;
+    max-width: 1340px;
+    padding-top: 20px;
+  }
+
+  our-logo {
+    margin-top: 5px;
+    margin-right: 20px;
+    width: 40px;
+  }
+
+  a {
+    color: black;
+    font-size: 24px;
+  }
+
+  .nav > li > a {
+    cursor: pointer;
+    transition: color 0.2s;
+    &.active {
+      color: #66001a;
+    }
+    &:hover {
+      background: none;
+      text-shadow: 2px 2px 3px grey;
+    }
+    &:focus {
+      background: none;
+      color: #66001a;
+    }
+    
+  }
+
+  // .login-button {
+  //   float: right;
+  //   border: 1px solid black;
+  //   margin-top: 10px;
+  //   background: none;
+  //   outline: none !important;
+  // }
+
+  // .welcome {
+  //   float: right;
+  //   margin-top: 12px;
+  //   span {
+  //     color: white;
+  //   }
+  //   a {
+  //     color: #f30046;
+  //     cursor: pointer;
+  //   }
+  // }
+
+}

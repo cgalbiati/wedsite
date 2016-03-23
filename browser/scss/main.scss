@@ -6,9 +6,9 @@ $darker-purple: #271027;
 
 $nav-padding: 60px;
 
-$font-default: 'Poiret One', serif;
+$font-default: 'Poiret One', cursive;
 $font-title: 'Arizonia', cursive;
-$font-fancy: 'Miss Fajardose', cursive;
+$font-fancy: 'Great Vibes', cursive;
 
 * {
   box-sizing: border-box;
@@ -23,6 +23,13 @@ body {
   }
   h1 {
     font-size: 46pt;
+    margin-top: 0px;
+    text-align: center;
+  }
+  .navbar {
+  *{
+    font-family: $font-fancy;
+  }
   }
   // background: #fdfdfd;
   // background: $deep-purple;
@@ -53,7 +60,15 @@ body {
 .state-container{
   // margin-top: -60px;
   // padding-top: 60px;
-  padding: 60px 5% 0 5%;
+  padding: 30px 5% $nav-padding 5%;
+  position: fixed;
+  top: $nav-padding;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  height: 100%;
+  width:100vw;
 }
 
 .centered {
@@ -64,7 +79,25 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@import 'directives/main';
+.text-center {
+  text-align: center;
+}
+.sub-heading{
+  font-size: 3em;
+  text-decoration: underline;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
 @import 'home/main';
-@import 'login/main';
 @import 'our-story/main';
+@import 'details';
+@import 'visit';
+@import 'navbar';
+
