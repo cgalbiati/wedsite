@@ -30,11 +30,10 @@
     "http": "0.0.0",
     "morgan": "^1.6.1",
     "path": "^0.12.7",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "gulp-sass": "^2.1.1"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.1"
   }
 }
