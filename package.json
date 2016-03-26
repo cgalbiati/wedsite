@@ -31,9 +31,9 @@
     "morgan": "^1.6.1",
     "path": "^0.12.7",
     "run-sequence": "^1.1.5",
-    "gulp-sass": "^2.1.1"
+    "gulp-sass": "^2.1.1",
+    "browser-sync": "^2.11.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1"
   }
 }
