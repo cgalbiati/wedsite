@@ -242,10 +242,11 @@ body {
   background-size: cover; }
 
 #our-story #grad {
-  background: url(/images/grad.jpg);
-  transform: translateZ(-1.5px) scale(2) translateX(-94%) translateY(400%) rotate(0deg);
+  background: url(/images/grad);
+  transform: translateZ(-1.5px) scale(1.5) translateX(-94%) translateY(330%) rotate(0deg);
   left: 5%;
-  background-size: cover; }
+  background-size: cover;
+  height: 400px; }
 
 #our-story #nyc {
   background: url(/images/nyc.jpg);
