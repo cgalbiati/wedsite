@@ -56,6 +56,10 @@ a {
   text-decoration: none;
   color: black; }
 
+.bw-pic {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
 #home {
   height: 100%; }
   #home #splash-pic {
@@ -63,11 +67,8 @@ a {
     max-width: 50vw;
     border-radius: 50%;
     z-index: 1;
-    transform: translate(-50%, -35%); }
-
-.bw-pic {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
+    transform: translate(-50%, -35%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7); }
 
 .heading {
   position: absolute;
@@ -75,153 +76,6 @@ a {
   width: 80%;
   left: 50%;
   transform: translate(-50%); }
-
-#our-story h1 {
-  margin-top: 40px;
-  text-align: left;
-  margin-bottom: 60pt; }
-
-#our-story p {
-  font-size: 1.3em; }
-
-#our-story #timeline {
-  position: absolute;
-  background: url(images/swirl-5-transp.png);
-  background-repeat: repeat-y;
-  top: 0%;
-  left: 50%;
-  width: 300px;
-  transform: translateZ(-3px) translateY(50%) scale(3);
-  height: 5000px;
-  z-index: 20; }
-
-#our-story .date {
-  position: absolute;
-  left: 50%;
-  transform: translateZ(0px);
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.5);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  width: 100px;
-  z-index: 40;
-  text-align: center; }
-
-#our-story .event {
-  width: 30%;
-  padding: 3%;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.5);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  margin-bottom: 100pt; }
-
-#our-story .event:nth-child(2n+1) {
-  margin-left: 5%;
-  margin-right: auto; }
-
-#our-story .event:nth-child(2n) {
-  margin-left: auto;
-  margin-right: 5%; }
-
-#our-story .timeline-pic {
-  position: absolute;
-  width: 320px;
-  height: 240px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  z-index: -1;
-  background-size: cover; }
-
-#our-story .left {
-  left: 35%; }
-
-#our-story .right {
-  left: 205%; }
-
-#our-story #cat {
-  background-image: url(/images/cartoon-cat.jpg);
-  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(30%) rotate(2deg); }
-
-#our-story #ski {
-  background-image: url(/images/ski.jpg);
-  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(100%) rotate(2deg); }
-
-#our-story #morocco {
-  background-image: url(/images/morocco-doorway.jpg);
-  transform: translateZ(-1px) translateX(-94%) translateY(120%) rotate(2deg);
-  height: 500px; }
-
-#our-story #aruba {
-  background-image: url(/images/cartoon-cat.jpg);
-  transform: translateZ(-2px) scale(2) translateX(-94%) translateY(-100%) rotate(2deg); }
-
-.parallax {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  perspective: 1px; }
-
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
-
-.parallax__layer--base {
-  transform: translateZ(0px); }
-
-.parallax__layer--front {
-  transform: translateZ(3px);
-  z-index: 2; }
-
-.parallax-background {
-  transform: translateZ(-4px) scale(5);
-  z-index: -2; }
-
-#google_map {
-  height: 1200px;
-  width: 1600px; }
-
-.gm-style-iw * {
-  display: block;
-  width: 100%; }
-
-.gm-style .gm-style-iw {
-  max-width: 230px !important; }
-
-.gm-style-iw h4, .gm-style-iw p {
-  margin: 0;
-  padding: 0; }
-
-.gm-style-iw a {
-  color: #4272db; }
-
-.sub-container {
-  margin: 20pt; }
-  .sub-container h2:first-of-type {
-    margin-top: 0; }
-
-.sub-container > img {
-  max-width: 100%;
-  height: auto;
-  border: solid;
-  box-shadow: 10pt 10pt 7pt grey; }
-
-.sub-container > #embed-map-canvas {
-  max-width: 100%;
-  height: auto;
-  border: solid;
-  box-shadow: 10pt 10pt 7pt grey; }
-
-#visit .thumb-img > img {
-  max-width: 100%;
-  height: auto;
-  border: solid;
-  box-shadow: 10pt 10pt 7pt grey;
-  border-radius: 50%; }
-
-#visit .thumb-info {
-  padding: 10pt 5% 10pt 5%; }
 
 .navbar {
   display: block; }

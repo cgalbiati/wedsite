@@ -1,14 +1,23 @@
+@import 'main';
+
 #visit{
   .thumb-img > img { 
     max-width: 100%; 
     height: auto; 
-    border: solid;
-    box-shadow: 10pt 10pt 7pt grey;
+    // border: solid;
+    box-shadow: 0 0 8pt black;
     border-radius: 50%;
+    // position: relative;
   }
 
   .thumb-info{
     padding: 10pt 5% 10pt 5%;
+  }
+
+  .dest-text{
+    position: relative;
+    transform: translateY(60%);
+    // top: 50%;
   }
   
 }
