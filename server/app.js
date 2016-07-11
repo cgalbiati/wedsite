@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //make static routes for files in public and node_modules
 app.use(express.static(path.join(__dirname, '../browser/public')));  
 app.use(express.static(path.join(__dirname, '../browser/build')));
+app.use(express.static(path.join(__dirname, '../browser/js')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 
@@ -48,6 +49,11 @@ app.get('/', function(req, res, next){
   	var pathToRoute = path.join(__dirname, '../browser', 'public', 'views', route +'.html');
     res.sendFile(pathToRoute);
   });
+});
+
+//static route for rsvp form
+app.get('/rsvp/code/:code', function (req, res, next) {
+  res.send(path.join(__dirname, '../browser', 'public', 'views', rsvpForm +'.html');
 });
 
 // error handlers
