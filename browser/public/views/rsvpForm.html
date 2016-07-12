@@ -5,6 +5,7 @@
      --><title>Chandra and Chris</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <!--<script src="/main.js"></script>-->
 </head>
 <body>
@@ -35,9 +36,15 @@
 
 
     <div id="submit-code">
-        <form method="post">
-            <label>Code (this is listed on your invitation)</label>
+        <form 
+            method="POST"
+            action="/api/rsvp"
+        >
+            <label>name</label>
             <input type="text"/>
+            <label>Will you be attending?</label>
+            <input type="checkbox" name="yes">
+            <input type="dropdown" name="diet">
             <input type="submit">
         </form>
     </div>

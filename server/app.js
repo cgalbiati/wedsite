@@ -9,32 +9,31 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('wedsite:server');
 var http = require('http');
 var app = express();
+var sequelize = require('sequelize');
+
+var seq = require('./models').seq;
+var Guest = require('./models').Guest;
+
+/** 
+  * Everything is in this file because I'm lazy and it's a very small project that will not grow bigger 
+**/
 
 
 /**
  * Configure app
  */
 app.use(logger('dev'));
-// app.use(session({
-//     // this mandatory configuration ensures that session IDs are not predictable
-//     secret: 'galbathomas'
-// }));
 app.use(cookieParser());
 // Parse our POST and PUT bodies.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(function (req, res, next) {
-//   if (!req.session.userId) req.session.userId = Math.random();
-//   next();
-// });
 
 //make static routes for files in public and node_modules
 app.use(express.static(path.join(__dirname, '../browser/public')));  
 app.use(express.static(path.join(__dirname, '../browser/build')));
 app.use(express.static(path.join(__dirname, '../browser/js')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
-
 
 
 //static route to index
@@ -52,8 +51,63 @@ app.get('/', function(req, res, next){
 });
 
 //static route for rsvp form
-app.get('/rsvp/code/:code', function (req, res, next) {
-  res.send(path.join(__dirname, '../browser', 'public', 'views', rsvpForm +'.html');
+app.get('/rsvp/form/:code', function (req, res, next) {
+  console.log('here!!')
+  return res.sendFile(path.join(__dirname, '../browser', 'public', 'views', 'rsvpForm.html'));
+});
+
+//api routes
+app.get('/api/guest/:code', function(req, res, next){
+  return Guest.findAll({
+    where: {
+      code: req.params.code
+    },
+    attributes: ['name', 'status', 'diet']
+  }).then(function(guests){
+    if (guests) {
+      return res.status(200).send(guests);
+    }
+    return res.send(404)
+  }).catch(function(err){
+    return next(err);
+  });
+});
+
+app.post('/api/code', function(req, res, next){
+  //validate?
+  console.log('here', req.body);
+  return res.redirect('/rsvp/form/'+ req.body.code);
+});
+
+app.post('/api/rsvp', function (req, res, next) {
+  var guests = req.body;
+  Promise.all(guests.map(function(guest){
+    return Guest.findOne({
+      where: {
+        code: guest.code,
+        name: guest.name
+      }
+    })
+    .then(function(foundGuest){
+      if (foundGuest) { // if the record exists in the db
+        foundGuest.updateAttributes({
+          status: guest.status,
+          diet: guest.diet
+        }).then(function(val) {
+          return 202;
+        });
+      }
+      else {
+        return new Error('user not found'); 
+      }
+    });
+  }))
+  .then(function(successes){
+    return res.send(202);
+  })
+  .catch(function(err){
+    return next(err);
+  });
 });
 
 // error handlers
@@ -96,12 +150,20 @@ app.set('port', port);
  */
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+//connect to db and start server
+//one of the seq.sync statements should always be commented out.  The first resets the db, and the second does not
+// seq.sync({force:true})
+seq.sync()
+.then(function(){
+    /**
+   * Listen on provided port, on all network interfaces.
+   */
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+
+});
+
 
 /**
  * Normalize a port into a number, string, or false.

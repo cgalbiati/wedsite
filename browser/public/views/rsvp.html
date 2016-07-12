@@ -23,7 +23,7 @@
 </nav>
 
 <section id="home" class='state-container'>
-    <div class='heading container'>
+<!--     <div class='heading container'>
       <h1>
         What are you doing here? We haven't even sent out invitations yet.
       </h1>  
@@ -32,12 +32,15 @@
    <div class='centered'>
         <img src="/images/us.jpg" class='bw-pic centered' id='splash-pic'>
     </div>
-
+ -->
 
     <div id="submit-code">
-        <form>
+        <form
+            method="POST"
+            action="/api/code"
+        >
             <label>Code (this is listed on your invitation)</label>
-            <input type="text"/>
+            <input type="text" name="code" />
             <input type="submit">
         </form>
     </div>
