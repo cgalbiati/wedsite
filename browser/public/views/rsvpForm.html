@@ -40,11 +40,22 @@
             method="POST"
             action="/api/rsvp"
         >
-            <label>name</label>
-            <input type="text"/>
-            <label>Will you be attending?</label>
-            <input type="checkbox" name="yes">
-            <input type="dropdown" name="diet">
+            <div id='guest1'>
+                <p id='name1'></p>
+                <label>Will you be attending?</label>
+                <label>Yes</label><input type="checkbox" name="yes">
+                <label>Regretfully, no</label><input type="checkbox" name="no">
+                <label>Dietary Restrictions</label>
+                <input type="dropdown" name="diet">
+            </div>
+            <div id='guest2'>
+                <p id='name2'></p>
+                <label>Will you be attending?</label>
+                <label>Yes</label><input type="checkbox" name="yes">
+                <label>Regretfully, no</label><input type="checkbox" name="no">
+                <label>Dietary Restrictions</label>
+                <input type="dropdown" name="diet">
+            </div>
             <input type="submit">
         </form>
     </div>
