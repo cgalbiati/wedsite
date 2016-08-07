@@ -6,7 +6,7 @@ var Sequelize = require('sequelize');
 // postgres://[username]:[password]@[host]:[port]/[databaseName]
 
 var seq = new Sequelize(DATABASE, USERNAME, PASSWORD, {
-  host: process.env.DB_HOST ||'localhost',
+  host: process.env.DATABASE_URL ||'localhost',
   //COMMENT OUT PORT LINE if this doesn't work on local machine, it's not needed for local
   port: process.env.DB_PORT || 5432,
   dialect: 'postgres',
