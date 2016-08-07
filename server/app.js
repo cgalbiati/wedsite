@@ -158,8 +158,8 @@ var server = http.createServer(app);
 
 //connect to db and start server
 //one of the seq.sync statements should always be commented out.  The first resets the db, and the second does not
-seq.sync({force:true})
-// seq.sync()
+// seq.sync({force:true})
+seq.sync()
 .then(function(){
     /**
    * Listen on provided port, on all network interfaces.
