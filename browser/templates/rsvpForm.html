@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chandra and Chris</title>
+    <!--     <base href="/" />
+     --><title>Chandra and Chris</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/../main.css" />
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity= sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/../rsvp.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <!--<script src="/main.js"></script>-->
 </head>
 <body>
 
@@ -23,23 +23,26 @@
 </nav>
 
 <section id="home" class='state-container'>
-
+    <div class='heading container'>
         <h1>
-            RSVP
+            What are you doing here? We haven't even sent out invitations yet.
         </h1>
+    </div>
+
+    <div class='centered'>
+        <img src="/images/us.jpg" class='bw-pic centered' id='splash-pic'>
+    </div>
 
 
-
-    <div class='rsvp-form'>
+    <div>
         <form 
             id="rsvp-form"
             method="POST"
             action="/api/rsvp"
         >
-        <div id='form-content'>
-            Please wait while we find the guests on your code...
-        </div>
             
+            
+            <input type="button" id="submit">
         </form>
     </div>
 </section>

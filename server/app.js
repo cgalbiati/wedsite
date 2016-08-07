@@ -10,6 +10,7 @@ var debug = require('debug')('wedsite:server');
 var http = require('http');
 var app = express();
 var sequelize = require('sequelize');
+var mustacheExpress = require('mustache-express');
 
 var seq = require('./models').seq;
 var Guest = require('./models').Guest;
@@ -18,6 +19,11 @@ var Guest = require('./models').Guest;
   * Everything is in this file because I'm lazy and it's a very small project that will not grow bigger 
 **/
 
+
+// // Register '.mustache' extension with The Mustache Express
+// app.engine('mustache', mustacheExpress());
+// app.set('view engine', 'mustache');
+// app.set('views', path.join(__dirname, '../browser/templates'));
 
 /**
  * Configure app
@@ -43,16 +49,15 @@ app.get('/', function(req, res, next){
 });
 
 //make static routes for other page routes
-['/details', '/rsvp', '/story', '/gifts', '/visiting'].forEach(function (route) {
+['/details', '/rsvp', '/story', '/gifts', '/visiting', '/rsvpForm'].forEach(function (route) {
   app.get(route, function (req, res, next) {
-  	var pathToRoute = path.join(__dirname, '../browser', 'public', 'views', route +'.html');
+  	var pathToRoute = path.join(__dirname, '../browser', 'public', 'views', route + '.html');
     res.sendFile(pathToRoute);
   });
 });
 
 //static route for rsvp form
 app.get('/rsvp/form/:code', function (req, res, next) {
-  console.log('here!!')
   return res.sendFile(path.join(__dirname, '../browser', 'public', 'views', 'rsvpForm.html'));
 });
 
@@ -62,7 +67,7 @@ app.get('/api/guest/:code', function(req, res, next){
     where: {
       code: req.params.code
     },
-    attributes: ['name', 'status', 'diet']
+    attributes: ['id', 'name', 'status', 'diet']
   }).then(function(guests){
     if (guests) {
       return res.status(200).send(guests);
@@ -75,20 +80,19 @@ app.get('/api/guest/:code', function(req, res, next){
 
 app.post('/api/code', function(req, res, next){
   //validate?
-  console.log('here', req.body);
   return res.redirect('/rsvp/form/'+ req.body.code);
 });
 
 app.post('/api/rsvp', function (req, res, next) {
-  var guests = req.body;
-  Promise.all(guests.map(function(guest){
+  var guests = req.body.guests;
+  var updatedGuestPromises = guests.map(function(guest){
     return Guest.findOne({
       where: {
-        code: guest.code,
-        name: guest.name
+        id: guest.id
       }
     })
     .then(function(foundGuest){
+      console.log('found', foundGuest)
       if (foundGuest) { // if the record exists in the db
         foundGuest.updateAttributes({
           status: guest.status,
@@ -101,11 +105,13 @@ app.post('/api/rsvp', function (req, res, next) {
         return new Error('user not found'); 
       }
     });
-  }))
+  });
+  Promise.all(updatedGuestPromises)
   .then(function(successes){
     return res.send(202);
   })
   .catch(function(err){
+    console.log('err', err.message)
     return next(err);
   });
 });
@@ -152,8 +158,8 @@ var server = http.createServer(app);
 
 //connect to db and start server
 //one of the seq.sync statements should always be commented out.  The first resets the db, and the second does not
-// seq.sync({force:true})
-seq.sync()
+seq.sync({force:true})
+// seq.sync()
 .then(function(){
     /**
    * Listen on provided port, on all network interfaces.

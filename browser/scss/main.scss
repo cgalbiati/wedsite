@@ -9,6 +9,7 @@ $nav-padding: 60px;
 $font-default: 'Poiret One', cursive;
 $font-title: 'Arizonia', cursive;
 $font-fancy: 'Great Vibes', cursive;
+$font-header: 'Italianno', cursive;
 
 * {
   box-sizing: border-box;
@@ -18,13 +19,16 @@ body {
   * {
     font-family: $font-default;
   }
-  h3, h2, h1{
+  h1{
     font-family: $font-title;
   }
   h1 {
     font-size: 46pt;
     margin-top: 0px;
     text-align: center;
+  }
+  h2, h3{
+    font-family: $font-header;
   }
   .navbar {
   *{
@@ -115,9 +119,26 @@ a{
   position: absolute;
   z-index: 2;
   width: 80%;
-  // margin: auto;
-    left: 50%;
-    transform: translate(-50%);
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.block {
+  display: block
+}
+
+.rsvp-form {
+  padding: 50px;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 1.3em;
+  border-radius: 10px;
+  background-color: rgba($grey-purple, .6);
+
+  input, button {
+    border-radius: 5px;
+    border-width: 0;
+  }
 }
 
 

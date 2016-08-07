@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--     <base href="/" />
- --><title>Chandra and Chris</title>
+    <title>Chandra and Chris</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css" />
-    <!--<script src="/main.js"></script>-->
 </head>
 <body>
 
@@ -23,23 +21,18 @@
 </nav>
 
 <section id="home" class='state-container'>
-<!--     <div class='heading container'>
       <h1>
-        What are you doing here? We haven't even sent out invitations yet.
+        RSVP
       </h1>  
-    </div>
-    
-   <div class='centered'>
-        <img src="/images/us.jpg" class='bw-pic centered' id='splash-pic'>
-    </div>
- -->
 
-    <div id="submit-code">
+    <div id="submit-code" class='text-center rsvp-form'>
+        <p>Please submit your code (listed on your RSVP card) below to look up your RSVP info</p>
+
         <form
             method="POST"
             action="/api/code"
         >
-            <label>Code (this is listed on your invitation)</label>
+            <span>Code</span>
             <input type="text" name="code" />
             <input type="submit">
         </form>

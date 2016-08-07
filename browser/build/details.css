@@ -13,12 +13,14 @@ body {
   width: 100vw; }
   body * {
     font-family: "Poiret One", cursive; }
-  body h3, body h2, body h1 {
+  body h1 {
     font-family: "Arizonia", cursive; }
   body h1 {
     font-size: 46pt;
     margin-top: 0px;
     text-align: center; }
+  body h2, body h3 {
+    font-family: "Italianno", cursive; }
   body .navbar * {
     font-family: "Great Vibes", cursive; }
 
@@ -76,6 +78,20 @@ a {
   width: 80%;
   left: 50%;
   transform: translate(-50%); }
+
+.block {
+  display: block; }
+
+.rsvp-form {
+  padding: 50px;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 1.3em;
+  border-radius: 10px;
+  background-color: rgba(103, 76, 102, 0.6); }
+  .rsvp-form input, .rsvp-form button {
+    border-radius: 5px;
+    border-width: 0; }
 
 .navbar {
   display: block; }
